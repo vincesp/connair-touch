@@ -24,6 +24,7 @@ angular.module('connair', ['ngResource', 'ngCookies', 'http-auth-interceptor'])
       var panelMap = {},
           rows = [],
           row = [];
+      //prepare data for panel selection view: two panels per row
       angular.forEach(config.panels, function (panel) {
         panelMap[stripShy(panel.title)] = panel;
         panel.title = convertShy(panel.title);
@@ -47,7 +48,6 @@ angular.module('connair', ['ngResource', 'ngCookies', 'http-auth-interceptor'])
   $scope.gotoPanel = function (panelTitle) {
     var cleanTitle = stripShy(panelTitle);
     $location.path(cleanTitle);
-    $scope.setTitle(cleanTitle);
   };
   $scope.getColorSchemeClass = function () {
     if ($scope.config.colorScheme) return 'c' + $scope.config.colorScheme;

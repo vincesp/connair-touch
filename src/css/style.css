@@ -32,11 +32,13 @@ html {
   left: 0;
   right: 0;
   z-index: 2000;
-  cursor: pointer;
   background-color: #000;
   background-color: rgba(0,0,0,.85);
   color: #b2b2b2;
   text-align: center;
+}
+.panelTitle > span {
+  cursor: pointer;
 }
 .panelContent {
   margin-bottom: .7cm;

@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: url(Oswald-Light.ttf), url(Oswald-Light.woff) format('woff');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: url(Oswald-Regular.ttf), url(Oswald-Regular.woff) format('woff');
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1cm;
+  background-color: #000;
+  padding: .15cm 0 0 0;
+  margin: 0;
+}
+html {
+  max-width: 12cm;
+  margin: 0 auto;
+  position: relative;
+}
+.panelTitle {
+  font-size: .3cm;
+  padding: .1cm .3cm .3cm .3cm;
+  letter-spacing: 0;
+  position: fixed;
+  bottom: -.2cm;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  cursor: pointer;
+  background-color: #000;
+  background-color: rgba(0,0,0,.85);
+  color: #b2b2b2;
+  text-align: center;
+}
+.panelContent {
+  margin-bottom: .7cm;
+}
+.panelTable {
+  border-spacing:.15cm;
+}
+.panel {
+  padding: .2cm;
+  height: 3cm;
+  cursor: pointer;
+  width: 50%;
+  vertical-align:top;
+}
+.panelBackIcon {
+  position: relative;
+  width: .6cm;
+  display: inline-block;
+}
+.panelBackIcon > div {
+  float: left;
+  width: .2cm;
+  height: .13cm;
+  margin: .03cm;
+}
+.configError {
+  color: #f00;
+  font-size: .4cm;
+  letter-spacing: .05em;
+}
+.toggleTitle, .panel {
+    letter-spacing: -.03em;
+}
+.toggle {
+  padding: .2cm;
+  border-radius: 1cm;
+  margin: .15cm 0;
+  min-height: 1.5cm;
+  text-align: center;
+}
+.toggleTitle {
+  position: relative;
+  padding: 0 1cm;
+}
+.toggleOn, .toggleOff {
+  width: 50%;
+  position: absolute;
+}
+.toggleOn {
+  left: 0;
+  text-align: left;
+}
+.toggleOff {
+  right: 0;
+  text-align: right;
+}
+.toggleOn > div, .toggleOff > div {
+  font-weight: 300;
+  font-size: .5cm;
+  height: 1.5cm;
+  cursor: pointer;
+  margin: 0 .2cm;
+  line-height: 1.5cm;
+}
+.toggleOn > div > div, .toggleOff > div > div {
+  position: relative;
+  z-index: 1000;
+  padding: 0 .2cm;
+}
+.toggleOn > div {
+  background: -moz-linear-gradient(left, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 80%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.4)), color-stop(80%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%); /* IE10+ */
+  background: linear-gradient(to right, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%); /* W3C */
+  border-radius: .7cm 0 0 .7cm;
+}
+.toggleOff > div {
+  background: -moz-linear-gradient(right, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 80%); /* FF3.6+ */
+  background: -webkit-gradient(linear, right top, left top, color-stop(0%,rgba(255,255,255,0.4)), color-stop(80%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(right, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(right, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(right, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%); /* IE10+ */
+  background: linear-gradient(to left, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%); /* W3C */
+  border-radius: 0 .7cm .7cm 0;
+}
+.actionRunning {
+  background: #fff!important;
+}
+.actionSuccess {
+  transition: background 3s;
+  -webkit-transition: background 3s;
+}
+.toggleError {
+  font-size: .3cm;
+}
+
+/** colors **/
+/* 2357 = default */
+.panel, .panelBackIcon > div {
+  background-color: #36c;
+}
+.toggle {
+  background-color: #ff9;
+}
+
+/* 2369 */
+.c2369 .panel, .c2369 .panelBackIcon > div {
+  background-color: #99f;
+}
+.c2369 .toggle {
+  background-color: #fc6;
+}
+
+/* 2375 */
+.c2375 .panel, .c2375 .panelBackIcon > div {
+  background-color: #68c;
+}
+.c2375 .toggle {
+  background-color: #e95;
+}
+
+/* 2379 */
+.c2379 .panel, .c2379 .panelBackIcon > div {
+  background-color: #36f;
+}
+.c2379 .toggle {
+  background-color: #ba5;
+}

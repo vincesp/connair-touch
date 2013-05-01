@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div ng-show="configGetError" class="configError">Cannot load config. Details:<br/>{{configGetError}}</div>
+  <table class="panelTable" ng-hide="configGetError">
+  <tr ng-repeat="row in rows">
+    <td ng-repeat="panel in row" class="panel" ng-click="gotoPanel(panel.title)">{{panel.title}}</td>
+  </tr>
+  </table>
+</body>
+</html>

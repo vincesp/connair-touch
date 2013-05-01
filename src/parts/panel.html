@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="panelContent">
+<div ng-repeat="actor in panel.actors" class="toggle" ng-style="{'background-color': actor.color}" ng-controller="ActorCtrl">
+  <div class="toggleOn"><div ng-class="toggleClasses.on"><div ng-click="toggle('on')">I</div></div></div>
+  <div class="toggleOff"><div ng-class="toggleClasses.off"><div ng-click="toggle('off')">O</div></div></div>
+  <div class="toggleTitle">{{actor.title}}</div>
+  <div class="toggleError" ng-show="actor._lastError">{{actor._lastError}}</div>
+</div>
+</div>
+<div class="panelTitle" ng-click="gotoPanel('')">
+<div class="panelBackIcon"><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div></div>
+  {{pageTitle}}
+</div>
+</body>
+</html>

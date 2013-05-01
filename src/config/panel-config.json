@@ -1,0 +1,111 @@
+{
+  "connAirPath": "/connair/",
+  "colorScheme": "2369",
+  "panels": [
+    {
+      "title": "Room & <1>",
+      "actors": [
+        {
+          "title": "Warm light",
+          "color": "#ff9",
+          "type": "device",
+          "id": 1
+        },
+        {
+          "title": "Warm heavy",
+          "color": "#ff3",
+          "type": "device",
+          "id": 2
+        },
+        {
+          "title": "Cool heavy",
+          "color": "#38c",
+          "type": "group",
+          "id": 3
+        },
+        {
+          "title": "Cool light",
+          "color": "#9cf",
+          "type": "group",
+          "id": 3
+        },
+        {
+          "title": "Neutral",
+          "color": "#766",
+          "type": "group",
+          "id": 3
+        }
+      ]
+    },
+    {
+      "title": "Su&shy;per&shy;cal&shy;i&shy;fra&shy;gil&shy;istic&shy;ex&shy;pi&shy;al&shy;ido&shy;cious",
+      "actors": [
+        {
+          "title": "Warm light",
+          "color": "#bf9",
+          "type": "device",
+          "id": 1
+        },
+        {
+          "title": "Warm heavy",
+          "color": "#6f3",
+          "type": "device",
+          "id": 2
+        },
+        {
+          "title": "Cool heavy",
+          "color": "#33c",
+          "type": "group",
+          "id": 3
+        },
+        {
+          "title": "Cool light",
+          "color": "#99f",
+          "type": "group",
+          "id": 3
+        },
+        {
+          "title": "Neutral",
+          "color": "#765",
+          "type": "group",
+          "id": 3
+        }
+      ]
+    },
+    { 
+      "title": "Room 3",
+      "actors": [
+        {
+          "title": "Warm light",
+          "color": "#fd9",
+          "type": "device",
+          "id": 1
+        },
+        {
+          "title": "Warm heavy",
+          "color": "#fc3",
+          "type": "device",
+          "id": 2
+        },
+        {
+          "title": "Cool heavy",
+          "color": "#3c8",
+          "type": "group",
+          "id": 3
+        },
+        {
+          "title": "Cool light",
+          "color": "#9fd",
+          "type": "group",
+          "id": 3
+        },
+        {
+          "title": "Neutral",
+          "color": "#657",
+          "type": "group",
+          "id": 3
+        }
+      ]
+    }
+  ]
+}

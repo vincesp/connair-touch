@@ -63,7 +63,8 @@ angular.module('connair', ['ngResource', 'ngCookies', 'http-auth-interceptor'])
     $scope.toggleClasses[action] = 'actionRunning';
     var actor = $scope.actor;
     delete actor._lastError;
-    $http.get($scope.config.connAirPath, {params: {action: action, type: actor.type, id: actor.id}})
+    var params = actor.type == 'all' ? {action: 'all' + action} : {action: action, type: actor.type, id: actor.id};
+    $http.get($scope.config.connAirPath, {params: params})
     .success(function () {
       $scope.toggleClasses[action] = 'actionSuccess';
     })

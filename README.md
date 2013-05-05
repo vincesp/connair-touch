@@ -12,7 +12,7 @@ Copy the contents of the `src` folder into a directory on the same web server wh
 
 Edit the `config/panel-config.json` file.
 
-**`connAirPath`** Path to the connair PHP script. If you specify a relative path, it is relative to the `index.html` file, not to the configuration file.
+`**connAirPath**` Path to the connair PHP script. If you specify a relative path, it is relative to the `index.html` file, not to the configuration file.
 
 **`colorScheme`** Color Scheme for default colors, if you don’t specify your own colors. Allowed values: `"2357"` (default), `"2369"`, `"2375"`, and `"2379"`.
 

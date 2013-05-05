@@ -3,11 +3,32 @@ angular.module('connair', ['ngResource', 'ngCookies', 'http-auth-interceptor'])
   var HOME = {templateUrl: 'parts/panelSelection.html'};
   $routeProvider
   .when('/', HOME)
-  .when('/login', {templateUrl: 'parts/login.html'})
+  .when('/login', {templateUrl: 'parts/login.html', controller: 'LoginCtrl'})
   .when('/:panelTitle', {templateUrl: 'parts/panel.html', controller: 'PanelCtrl'})
   .otherwise(HOME);
 })
-.controller('MainCtrl', function($scope, $resource, $http, $location, $cookies) {
+.factory('loginService', function ($http, Base64, authService) {
+  var PINKEY = 'connairpin',
+      pin = null;
+  
+  function setPin(newPin) {
+    pin = newPin;
+    $http.defaults.headers.common['Authorization'] = 'Basic ' + Base64.encode('connairpin:' + pin);
+  }
+  
+  function enterPin(newPin) {
+    localStorage.setItem(PINKEY, newPin);
+    setPin(newPin);
+    authService.loginConfirmed();
+  };
+  
+  setPin(localStorage.getItem(PINKEY));
+  
+  return {
+    enterPin: enterPin
+  };
+})
+.controller('MainCtrl', function ($scope, $resource, $http, $location) {
   var HOME_TITLE = $scope.pageTitle = 'ConnAir Remote Touch';
   var CONFIG_PATH = 'config/panel-config.json';
   function convertShy(t) {
@@ -73,5 +94,39 @@ angular.module('connair', ['ngResource', 'ngCookies', 'http-auth-interceptor'])
       delete $scope.toggleClasses[action];
     });
   };
+})
+.controller('LoginCtrl', function ($scope, loginService) {
+  function resetPin() {
+    $scope.enteredDigits = ['', '', '', ''];
+    $scope.pin = '';
+  }
+  resetPin();
+  $scope.numberButtonRows = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    ['C', 0]
+  ];
+  $scope.enterDigit = function (button) {    
+    if (button == 'C') {
+      resetPin();
+    } else {
+      $scope.enteredDigits[$scope.pin.length] = '•';
+      $scope.pin += button.toString();
+      if ($scope.pin.length == 4) {
+        loginService.enterPin($scope.pin);
+        $scope.gotoPanel('');
+      }
+    }
+  }
+})
+.controller('LoginButtonCtrl', function ($scope, $timeout) {
+  $scope.onClick = function () {
+    $scope.enterDigit($scope.button);
+    $scope.className = 'actionRunning';
+    $timeout(function () {
+      $scope.className = 'actionDone';
+    });
+  }
 })
 ;

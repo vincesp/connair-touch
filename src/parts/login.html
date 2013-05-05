@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-  Please enter PIN.
+  <div><span ng-repeat="digit in enteredDigits" class="enteredDigit">{{digit}}</span></div>
+  <div ng-repeat="buttons in numberButtonRows">
+    <span ng-repeat="button in buttons" class="pinButton" ng-click="onClick()" ng-class="className" ng-controller="LoginButtonCtrl">
+      {{button}}
+    </span>
+  </div>
 </body>
 </html>

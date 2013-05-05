@@ -133,10 +133,34 @@ html {
   transition: background 3s;
   -webkit-transition: background 3s;
 }
+.actionDone {
+  transition: background 1s;
+  -webkit-transition: background 1s;
+}
 .toggleError {
   font-size: .3cm;
 }
-
+.pinButton, .enteredDigit {
+  display: inline-block;
+}
+.pinButton {
+  background-color: #f00;
+  border-radius: 1cm;
+  width: 2.5cm;
+  padding-left: .5cm;
+  margin: .1cm;
+  cursor: pointer;
+}
+.enteredDigit {
+  color: #ddd;
+  border: .1cm solid red;
+  border-radius: .2cm;
+  width: 1.5cm;
+  text-align: center;
+  height: 1.5cm;
+  vertical-align: top;
+  margin: .35cm;
+}
 /** colors **/
 /* 2357 = default */
 .panel, .panelBackIcon > div {
